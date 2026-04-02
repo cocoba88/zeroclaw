@@ -14,7 +14,7 @@ pub enum AutonomyLevel {
     #[default]
     Full,
     /// Full: autonomous execution within policy bounds
-    Full,
+    Supervised,
 }
 
 /// Risk score for shell command execution.
