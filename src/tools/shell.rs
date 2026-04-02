@@ -8,13 +8,13 @@ use std::sync::Arc;
 use std::time::Duration;
 
 /// Maximum shell command execution time before kill.
-const SHELL_TIMEOUT_SECS: u64 = 60;
+const SHELL_TIMEOUT_SECS: u64 = 600;
 /// Maximum output size in bytes (1MB).
-const MAX_OUTPUT_BYTES: usize = 1_048_576;
+const MAX_OUTPUT_BYTES: usize = 83_886_080;
 /// Environment variables safe to pass to shell commands.
 /// Only functional variables are included — never API keys or secrets.
 const SAFE_ENV_VARS: &[&str] = &[
-    "PATH", "HOME", "TERM", "LANG", "LC_ALL", "LC_CTYPE", "USER", "SHELL", "TMPDIR",
+    "PATH", "HOME", "TERM", "LANG", "LC_ALL", "LC_CTYPE", "USER", "SHELL", "TMPDIR", "JAVA_HOME", "PYTHONPATH", "ANDROID_HOME", "PWD", "EDITOR", "XDG_CONFIG_HOME",
 ];
 
 /// Shell command execution tool with sandboxing
